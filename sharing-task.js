@@ -40,10 +40,13 @@ console.log('');
 console.log("Task 1: Generate Attendee Badge:\n");
 
 function generateBadge(name, role) {
-    console.log(`Name: ${name}, Role: ${role}`);
+    let formatName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+    let formatRole = role.charAt(0).toUpperCase() + role.slice(1).toLowerCase();
+    console.log(`Name: ${formatName}, Role: ${formatRole}`);
 }
 
 generateBadge("Alice", "Speaker");
+generateBadge("bob", "carsalesman");
 
 // ============================================
 // 🧩 Task 2: Calculate Event Cost
@@ -70,7 +73,8 @@ function calculateEventCost (attendNum, cost) {
     return total;
 }
 
-console.log(calculateEventCost(123, 56));
+console.log(`$${calculateEventCost(123, 56)}`);
+console.log(`$${calculateEventCost(99, 56)}`);
 
 // ============================================
 // 🧩 Task 3: Validate Email
@@ -87,7 +91,16 @@ console.log(calculateEventCost(123, 56));
 console.log("\nTask 3: Validate Email:\n");
 
 function isValEmail(email) {
-    return email.includes("@") && email.includes(".");
+    return email.includes("@") && email.includes(".com");
+}
+
+console.log(isValEmail("jimmyjohn@yahoo.com"));
+console.log(isValEmail("jimmyjohn@yahoocom"));
+
+console.log('');
+
+function isValEmail(email) {
+    return email.includes("@") && email.includes(".com");
 }
 
 console.log(isValEmail("jimmyjohn@yahoo.com"));
